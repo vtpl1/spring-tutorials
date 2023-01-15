@@ -8,3 +8,26 @@ logging:
     org.springframework.security: INFO
     org.springframework.security.oauth2: INFO
     # org.springframework.boot.autoconfigure: DEBUG
+
+api:
+  info:
+    title: Spring Boot APIs
+    description: Spring Boot API Examples
+    version:  1.0.0
+    terms-of-service: http://example.com/terms/
+    contact:
+      name: Example API Team
+      email: apiteam@example.com
+      url: http://example.com/team
+      license:
+        name: Apache 2.0
+        url: http://www.apache.org/licenses/LICENSE-2.0.html
+  logging:
+    enable: true
+    url-patterns: /event/*
+    requestIdParamName: CORRELATION_ID
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /docs

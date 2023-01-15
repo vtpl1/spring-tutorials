@@ -10,5 +10,6 @@
   <url>http://maven.apache.org</url>
   <modules>
     <module>auth-server</module>
+    <module>simple-ui</module>
   </modules>
 </project>
