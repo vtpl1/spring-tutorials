@@ -1,15 +1,30 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    
   <modelVersion>4.0.0</modelVersion>
+    
   <groupId>com.vtpl</groupId>
+    
   <artifactId>spring-tutorials</artifactId>
+    
   <packaging>pom</packaging>
+    
   <version>1.0-SNAPSHOT</version>
+    
   <name>spring-tutorials</name>
+    
   <url>http://maven.apache.org</url>
+    
   <modules>
+        
     <module>auth-server</module>
-    <module>simple-ui</module>
+        
+    <!-- <module>simple-ui</module> -->
+        
+    <module>messages-client</module>
+        
+    <module>messages-resource</module>
+      
   </modules>
+  
 </project>

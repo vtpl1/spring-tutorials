@@ -16,20 +16,28 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @Configuration(proxyBeanMethods = false)
 public class DefaultSecurityConfig {
 
-    @Bean
-    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(authorize -> authorize.anyRequest().authenticated())
-                .formLogin(withDefaults());
-        return http.build();
-    }
+	// @formatter:off
+	@Bean
+	SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+		http
+			.authorizeHttpRequests(authorize ->
+				authorize.anyRequest().authenticated()
+			)
+			.formLogin(withDefaults());
+		return http.build();
+	}
+	// @formatter:on
 
-    @Bean
-    UserDetailsService users() {
-        UserDetails user = User.withDefaultPasswordEncoder()
-                .username("user1")
-                .password("password")
-                .roles("USER")
-                .build();
-        return new InMemoryUserDetailsManager(user);
-    }
+	// @formatter:off
+	@Bean
+	UserDetailsService users() {
+		UserDetails user = User.withDefaultPasswordEncoder()
+				.username("user1")
+				.password("password")
+				.roles("USER")
+				.build();
+		return new InMemoryUserDetailsManager(user);
+	}
+	// @formatter:on
+
 }
