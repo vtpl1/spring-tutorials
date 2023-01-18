@@ -335,17 +335,17 @@ public class ApiLoggingFilter implements Filter {
 			return original.encodeRedirectURL(url);
 		}
 
-		@SuppressWarnings("deprecation")
-		@Override
-		public String encodeUrl(String url) {
-			return original.encodeUrl(url);
-		}
+		// @SuppressWarnings("deprecation")
+		// @Override
+		// public String encodeUrl(String url) {
+		// 	return original.encodeUrl(url);
+		// }
 
-		@SuppressWarnings("deprecation")
-		@Override
-		public String encodeRedirectUrl(String url) {
-			return original.encodeRedirectUrl(url);
-		}
+		// @SuppressWarnings("deprecation")
+		// @Override
+		// public String encodeRedirectUrl(String url) {
+		// 	return original.encodeRedirectUrl(url);
+		// }
 
 		@Override
 		public void sendError(int sc, String msg) throws IOException {
@@ -397,11 +397,11 @@ public class ApiLoggingFilter implements Filter {
 			original.setStatus(sc);
 		}
 
-		@SuppressWarnings("deprecation")
-		@Override
-		public void setStatus(int sc, String sm) {
-			original.setStatus(sc, sm);
-		}
+		// @SuppressWarnings("deprecation")
+		// @Override
+		// public void setStatus(int sc, String sm) {
+		// 	original.setStatus(sc, sm);
+		// }
 
 		@Override
 		public String getHeader(String arg0) {
