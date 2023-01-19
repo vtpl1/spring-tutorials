@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8070
 
 logging:
   level:
@@ -21,9 +21,9 @@ spring:
             client-secret: openid-connect
             client-authentication-method: client_secret_basic
             authorization-grant-type: authorization_code
-            redirect-uri: http://127.0.0.1:8080/login/oauth2/code/login-client
+            redirect-uri: http://127.0.0.1:8070/login/oauth2/code/{registrationId}
             scope: openid,profile
-            client-name: Spring
+            client-name: login-client-oidc
           okta:
             client-id: your-app-client-id
             client-secret: your-app-client-secret

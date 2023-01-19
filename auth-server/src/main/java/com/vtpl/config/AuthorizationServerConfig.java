@@ -73,12 +73,26 @@ public class AuthorizationServerConfig {
 				.scope(OidcScopes.PROFILE)
 				.scope("message.read")
 				.scope("message.write")
-				.clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())
+				.clientSettings(ClientSettings.builder().requireAuthorizationConsent(true).build())				
 				.build();
-
+		RegisteredClient registeredClient2 = RegisteredClient.withId(UUID.randomUUID().toString())
+				.clientId("login-client")
+				.clientSecret("{noop}openid-connect")
+				.clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
+				.authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
+				.authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
+				.authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
+				.redirectUri("http://127.0.0.1:8070/login/oauth2/code/login-client")
+				.redirectUri("http://127.0.0.1:8070/authorized")
+				.scope(OidcScopes.OPENID)
+				.scope(OidcScopes.PROFILE)
+				.scope("message.read")
+				.scope("message.write")		
+				.build();
 		// Save registered client in db as if in-memory
 		JdbcRegisteredClientRepository registeredClientRepository = new JdbcRegisteredClientRepository(jdbcTemplate);
 		registeredClientRepository.save(registeredClient);
+		registeredClientRepository.save(registeredClient2);
 
 		return registeredClientRepository;
 	}
