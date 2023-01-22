@@ -1,12 +1,18 @@
-import { ChakraProvider, Box } from "@chakra-ui/react";
-import Login from "./components/Login";
+import {
+  ColorModeProvider,
+  CSSReset,
+  theme,
+  ThemeProvider,
+} from "@chakra-ui/react";
+import SplitScrenLogin from "./components/Login";
 function App() {
   return (
-    <ChakraProvider>
-      <Box p={10}>
-        <Login />
-      </Box>
-    </ChakraProvider>
+    <ThemeProvider theme={theme}>
+      <ColorModeProvider>
+        <CSSReset />
+        <SplitScrenLogin />
+      </ColorModeProvider>
+    </ThemeProvider>
   );
 }
 
